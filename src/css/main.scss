@@ -1,7 +1,90 @@
 body {
-	background-color: green;
+	padding: 0;
+	margin: 5px auto;
+	position: relative;
+	max-width: 800px;
+	text-align: center;
+	height: 100%;
+}
 
-	h1 {
-		color: white;
+.game-play {
+	width: 100%;
+
+	button {
+		border-radius: 3px;
+		display: block;
+		margin: 20px auto;
+		padding: 5px 15px;
+	}
+
+	.player {
+		width: 50%;
+		display: inline-block;
+	}
+
+	.status {
+		display: none;
+
+		#result {
+			display: none;
+
+			.text {
+				font-size: 25px;
+				color: blue;
+				margin: 10px;
+			}
+		}
+	}
+
+	.game-icons {
+		border-radius: 4px;
+		margin: 2px 4px;
+
+		li {
+			list-style: none;
+			display: inline-block;
+			margin: 2px 7px;
+
+			.rock, .paper, .scissor {
+				font-size: 40px;
+				border: 1px solid burlywood;
+				border-radius: 50%;
+				padding: 3px 5px;
+				cursor: pointer;
+				text-decoration: none;
+
+				&:hover, &.selected {
+					background-color: burlywood
+				}
+
+				&.disabled {
+					cursor: default;
+					pointer-events: none;
+				}
+			}
+
+			.rock:before {
+				content: "\270a";
+				vertical-align: middle;
+			}
+
+			.paper:before {
+				content: "\270b";
+				vertical-align: middle;
+			}
+
+			.scissor:before {
+				content: "\270c";
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.hide {
+		display: none !important;
+	}
+
+	.show {
+		display: block !important;
 	}
 }
